@@ -60,6 +60,8 @@ namespace ConsoleProcessKiller
                 // add it to common list
                 processesToSort.Add(tmpProcInfo);
             }
+            // sort list by calculated weights
+            processesToSort.Sort((pr2, pr1) => pr1.Weight.CompareTo(pr2.Weight));
             return processesToSort;
         }
 
@@ -76,8 +78,6 @@ namespace ConsoleProcessKiller
 
         private static void KillSomeProcesses(List<ProcInfo> processesToSort)
         {
-            // sort list by calculated weights
-            processesToSort.Sort((pr2, pr1) => pr1.Weight.CompareTo(pr2.Weight));
             // output on display all available to kill processes
             foreach (var t in processesToSort)
             Console.WriteLine("Name: {0}, memory: {1}, procTime: {2}, weight: {3}", t.Name, t.MemoryUsage,

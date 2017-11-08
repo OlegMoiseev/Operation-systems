@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProcessesKiller"
         mc:Ignorable="d"
-        Title="Killer" Height="350" Width="525">
-    <Grid>
+        Title="Killer" Height="348.635" Width="565.481" ResizeMode="CanMinimize">
+    <Grid Margin="0,0,3.667,-0.333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding ItemsToTable}" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Height="232" Width="536" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="Button1" Content="Kill selected process" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top" Width="249" Height="24" Click="KillSelectedProcess"/>
+        <Button x:Name="Button2" Content="Refresh" HorizontalAlignment="Left" Margin="300,281,0,0" VerticalAlignment="Top" Width="246" Height="24" Click="ReloadT"/>
+        <Button x:Name="Button3" Content="Kill the WORST application!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="536" Margin="10,248,0,0" Height="28" Click="KillTheWorst" Foreground="Red"/>
     </Grid>
 </Window>
